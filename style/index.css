@@ -24,6 +24,7 @@
   -webkit-animation-delay: 0.5s; 
 } 
 
+
 @-webkit-keyframes mymove {
     from {width: 50%;}
     to {width: 100%;}
@@ -88,7 +89,7 @@
    animation-delay: 1s;
   -webkit-animation-delay: 1s; 
 } 
- 
+
 @-webkit-keyframes mymove3 {
     from {height: 1px;
           opacity: 0;
