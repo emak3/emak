@@ -1,109 +1,54 @@
-.cd-loading-bar {
-  position: fixed;
-  z-index: 2;
-  left: 50%;
-  top: 50%;
-  height: 2px;
-  width: 50%;
-  background-color: #161616;
-
-  -webkit-transform: translateZ(0);
-  -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -o-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -o-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-
--webkit-animation: mymove 0.5s forwards;
-    animation: mymove 0.5s forwards;
-   animation-delay: 0.5s;
-  -webkit-animation-delay: 0.5s; 
-} 
-
-
-@-webkit-keyframes mymove {
-    from {width: 50%;}
-    to {width: 100%;}
+ul {
+  display: inline-grid;
+  grid-auto-flow: row;
+  grid-gap: 24px;
+  justify-items: center;
+  margin: auto;
 }
 
-@keyframes mymove {
-    from {width: 50%;}
-    to {width: 100%;}
-} 
-
-.cd-loading-progress {
-  z-index:1;
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  background-color: black;
-  -webkit-transform-origin: left center;
-  -moz-transform-origin: left center;
-  -ms-transform-origin: left center;
-  -o-transform-origin: left center;
-  transform-origin: left center;
-   -webkit-animation: mymove2 0.5s forwards;
-    animation: mymove2 0.5s forwards;
-  
+@media (min-width: 500px) {
+  ul {
+    grid-auto-flow: column;
+  }
 }
 
-@-webkit-keyframes mymove2 {
-    from {width: 0%;}
-    to {width: 100%;}
+a {
+  color: white;
+  text-decoration: none;
+  box-shadow: inset 0 -1px 0 hsla(0, 0%, 100%, 0.4);
 }
 
-@keyframes mymove2 {
-    from {width: 0%;}
-    to {width: 100%;}
+a:hover {
+  box-shadow: inset 0 -1.2em 0 hsla(0, 0%, 100%, 0.4);
 }
 
-.page-is-changing .cd-loading-bar {
-  visibility: visible;
-  -webkit-transform: translateX(-50%) translateY(-50%) scaleX(0.3);
-  -moz-transform: translateX(-50%) translateY(-50%) scaleX(0.3);
-  -ms-transform: translateX(-50%) translateY(-50%) scaleX(0.3);
-  -o-transform: translateX(-50%) translateY(-50%) scaleX(0.3);
-  transform: translateX(-50%) translateY(-50%) scaleX(0.3);
-  -webkit-transition: visibility 0s 0.3s, -webkit-transform 0.4s 0.4s;
-  -moz-transition: visibility 0s 0.3s, -moz-transform 0.4s 0.4s;
-  transition: visibility 0s 0.3s, transform 0.4s 0.4s;
+li:last-child {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
 }
 
-
-.cd-cover-layer{
-  background:#161616;
-  position: fixed;
-  z-index: 3;
-  left: 0%;
-  top: 50%;
-  opacity:0;
-  height: 1px;
-  width:100%;
--webkit-animation: mymove3 0.3s forwards;
-    animation: mymove3 0.3s forwards;
-   animation-delay: 1s;
-  -webkit-animation-delay: 1s; 
-} 
-
-@-webkit-keyframes mymove3 {
-    from {height: 1px;
-          opacity: 0;
-          top: 50%;}
-    to {height: 100%;
-        opacity: 100;
-        top: 0%;}
+li:hover ~ li p {
+  animation: wave-animation 0.3s infinite;
 }
 
-@keyframes mymove3 {
-    from {height: 1px;
-          opacity: 0;
-          top: 50%;}
-        to {height: 100%;
-        opacity: 100;
-        top: 0%;}
+div {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background-color: #002a38;
+  line-height: 1.3;
+  font-family: Menlo, monospace;
+}
+
+@keyframes wave-animation {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  75% {
+    transform: rotate(-15deg);
+  }
 }
