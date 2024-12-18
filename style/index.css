@@ -5,7 +5,7 @@
   top: 50%;
   height: 2px;
   width: 50%;
-  background-color: #4089a6;
+  background-color: #161616;
 
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
@@ -75,7 +75,7 @@
 
 
 .cd-cover-layer{
-  background:#4089a6;
+  background:#161616;
   position: fixed;
   z-index: 3;
   left: 0%;
